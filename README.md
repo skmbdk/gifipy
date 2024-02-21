@@ -1,7 +1,7 @@
 # GIFinder App
 
 <p>GIFinder is a project built with Angular. It connects to <a href="https://giphy.com/">GIPHY</a>'s API and allows to find and share your favourite gifs.</p>
-<p>Live web application link: <a href="https://thegifinder.netlify.app/" target="_blank">Click Here</a></p>
+<p>Live web application link: <a href="[https://thegifinder.netlify.app/](https://gifipy.vercel.app/)" target="_blank">Click Here</a></p>
 <p><strong>Functionalities of this project:</strong></p>
 <ul>
     <li>Input validation check if input is empty</li>
