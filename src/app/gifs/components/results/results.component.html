@@ -1,0 +1,35 @@
+<div class="section-header">
+    <p class="home-btn" (click)="shared.resultBlock = false">
+        <fa-icon [icon]="faArrowLeft"></fa-icon> 
+        <span>Back to Homepage</span>
+    </p>
+    <h3>
+        <span *ngIf="results.length === 0">No Gifs found for</span>
+        <span *ngIf="results.length > 0">Gifs found for</span>
+         "{{ searchValue | titlecase }}"
+    </h3>
+</div>
+<!-- Loading Container -->
+<app-loading></app-loading>
+<!-- Gifs container -->
+<div class="gif-card-container">
+    <figure class="gif-card" *ngFor="let gif of results">
+        <img 
+            [src]="gif.images.downsized_medium.url" 
+            alt="{{ gif.title }}" 
+            class="gif-img"
+            loading="lazy"
+        >
+        <figcaption>
+            <fa-icon 
+                [icon]="faLink" 
+                title="Copy link"
+                (click)="copyLink(gif.images.downsized_medium.url)">
+            </fa-icon>
+        </figcaption>
+    </figure>
+</div>
+<!-- Not found container -->
+<div *ngIf="results.length === 0" class="not-found-container">
+    <app-not-found></app-not-found>
+</div>

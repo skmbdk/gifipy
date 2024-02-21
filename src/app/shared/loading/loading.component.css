@@ -1,0 +1,9 @@
+.loading {
+    position: relative;
+    text-align: center;
+}
+
+.loading p {
+    padding-top: 70px;
+    font-size: var(--fs-regular);
+}

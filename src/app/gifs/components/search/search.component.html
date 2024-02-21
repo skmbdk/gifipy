@@ -1,0 +1,36 @@
+<div class="section-header">
+    <h1><span>GIF</span>inder</h1>
+    <p class="lead">The internet's source for gifs. Powered by GIPHY.</p>
+</div>
+<!-- Search bar -->
+<div id="search-bar">
+    <button 
+        type="submit" 
+        class="search-btn custom-btn" 
+        (click)="searchGifs()">
+        <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+    <input 
+        type="search" 
+        id="search-input" 
+        #inputValue
+        placeholder="Search gifs..."
+        (keydown.enter)="searchGifs()"
+        [(ngModel)] = 'searchValue'
+    >
+    <button 
+        type="submit" class="history-btn custom-btn" 
+        (click)="shared.showBlock=true" 
+        title="Search history">
+        <fa-icon [icon]="faClock"></fa-icon>
+    </button>
+    <!-- Search History Block -->
+    <app-search-history 
+        *ngIf="shared.showBlock" (sendValue)="searchItem($event)">
+    </app-search-history>
+</div>
+<p class="mobile-msg">
+    Tap gifs to share
+    <fa-icon [icon]="faLink" title="Copy link"></fa-icon>
+</p>
+

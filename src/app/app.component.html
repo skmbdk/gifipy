@@ -1,0 +1,21 @@
+<main id="main-container">
+    <!-- Notifications -->
+    <app-notification></app-notification>
+    <!-- Search Bar -->
+    <section id="search-container">
+        <div class="inner-wrap">
+            <app-search (sendValue)="getValue($event)"></app-search>
+        </div>
+    </section>
+    <!-- Main Display -->
+    <section id="gifs-container">
+        <div class="inner-wrap">
+            <div *ngIf="shared.resultBlock === false" >
+                <app-trending (sendValue)="getValue($event)"></app-trending>
+            </div>
+            <div *ngIf="shared.resultBlock">
+                <app-results [searchValue]="searchValue"></app-results>
+            </div>
+        </div>
+    </section>
+</main>

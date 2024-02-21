@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+    /* Colors*/
+    --clr-background-light: #fff;
+    --clr-heading-light: #ffffff;
+    --clr-text-light: #b3b3b3;
+    --clr-dark-gray: #828282;
+    --clr-heading-dark: #0d0f15;
+    --clr-charcoal: #151515;
+    --clr-backgound-dark: #000;
+    --clr-accent: #9cdb2e;
+
+    /* Fonts */
+    --ff-body: "DM Sans", sans-serif;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fs-xsmall: 0.85rem;
+    --fs-small: 1.2rem;
+    --fs-regular: 1.5rem;
+    --fs-medium: 2rem;
+    --fs-large: 2.5rem;
+    --fs-xlarge: 4.5rem;
+}
+
+/* Global Settings */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--ff-body);
+    background-color: var(--clr-backgound-dark);
+}
+
+h1 {
+    font-size: var(--fs-xlarge);
+    color: var(--clr-heading-light);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--clr-heading-light);
+}
+
+p {
+    color: var(--clr-text-light);
+}
+
+a {
+    text-decoration: none;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* App main container */
+#main-container {
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.inner-wrap {
+    width: 55%;
+    margin: auto;
+}
+
+/* Search Container */
+#search-container {
+    position: relative;
+    width: 100%;
+    min-height: 45vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#0000002b, #0000002b),
+                url(./assets/images/12.png) center center no-repeat;
+    background-size: cover;
+     z-index: 5;
+}
+
+#search-container {
+    text-align: center;
+}
+
+#search-container h1 span {
+    font-weight: var(--fw-bold);
+}
+
+#search-container .lead {
+    font-size: var(--fs-small);
+}
+
+/* Gifs container style */
+
+#gifs-container {
+    position: relative;
+    padding: 0 0 2rem 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#gifs-container h2{
+    font-size: var(--fs-medium);
+}
+
+.section-header {
+    padding: 2rem 0 0 0;
+}
+
+.section-header fa-icon {
+    color: var(--clr-accent);
+}
+
+.gif-card-container {
+    padding: 1rem 0;
+    line-height: 0;
+    column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count:    3;
+    column-gap: 0;
+        -webkit-column-gap:   0;
+        -moz-column-gap:      0;  
+}
+
+.gif-card {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.gif-card figcaption {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    font-size: var(--fs-regular);
+    text-align: right;
+    background-color: transparent;
+    color: var(--clr-background-light);
+
+}
+
+.gif-card:hover figcaption,
+.gif-card:focus {
+    background-color: #00000041;
+}
+
+
+.gif-card figcaption fa-icon {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.gif-card:hover figcaption fa-icon,
+.gif-card:focus figcaption fa-icon {
+    opacity: 1;
+}
+
+.gif-card figcaption fa-icon:hover,
+.gif-card figcaption fa-icon:focus  {
+    font-size: 1.65rem;
+    transition: font-size ease 0.3s;
+}
+
+.gif-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    display: block;
+}
+
+/* ========================================================================*/
+/* Responsive style */
+@media screen and (max-width: 800px) {
+    :root {
+        --fs-small: 1.1rem;
+        --fs-regular: 1.3rem;
+        --fs-medium: 1.8rem;
+        --fs-large: 2.2rem;
+        --fs-xlarge: 4rem;
+    }
+
+    #search-container {
+        min-height: 45vh;
+    }
+
+    .inner-wrap {
+        width: 95%;
+    }
+
+    .gif-card {
+        padding: 0.2rem;
+    }
+
+    .gif-card figcaption {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--fs-small);
+        text-align: center;
+        background-color: transparent;
+        color: var(--clr-background-light);
+    }
+
+    .gif-card figcaption fa-icon:hover  {
+        font-size: 1rem;
+    }
+}

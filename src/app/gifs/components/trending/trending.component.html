@@ -1,0 +1,34 @@
+<div class="section-header">
+    <h3>
+        <fa-icon [icon]="faLineChart"></fa-icon>
+        <span>Trending now</span>
+    </h3>
+    <!-- Trending hashtags list -->
+    <p class="item-container">
+        <span *ngFor="let item of trendingList" class="item-capsule" (click)="getGifs(item)">
+            #{{ item | titlecase}}
+        </span>
+    </p>
+</div>
+<!-- Loading Container -->
+<app-loading></app-loading>
+<!-- Trending gifs container -->
+<div class="gif-card-container">
+    <figure class="gif-card" *ngFor="let gif of trendingGifs">
+        <img 
+            [src]="gif.images.downsized_medium.url" 
+            alt="{{ gif.title }}" 
+            class="gif-img"
+            loading="lazy"
+        >
+        <figcaption>
+            <fa-icon 
+                [icon]="faLink" 
+                title="Copy link" 
+                (click)="copyLink(gif.images.downsized_medium.url)">
+            </fa-icon>
+        </figcaption>
+    </figure>
+</div>
+
+

@@ -1,0 +1,20 @@
+<div id="history">
+    <!-- Close dropdown -->
+    <div class="close-btn">
+        <span>Recent search results</span>
+        <fa-icon [icon]="faClose" (click)="shared.showBlock = false" title="Close"></fa-icon>
+    </div>
+    <!-- Search hitory items -->
+    <div class="history-container">
+        <span *ngFor="let item of search" (click)="getGifs(item)" class="history-item">
+            {{ item | titlecase }}
+            <fa-icon [icon]="faClose" (click)="removeItem(item)"></fa-icon>
+        </span>
+        <p *ngIf="search.length < 1" class="empty-msg">Search history is empty</p>
+    </div>
+    <!-- Clear history button -->
+    <div (click)="clearSearch()" class="clear-btn">
+        <fa-icon [icon]="faTrash"></fa-icon> 
+        <span>Clear search</span> 
+    </div>
+</div>

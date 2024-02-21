@@ -1,0 +1,28 @@
+.section-header h3 {
+    font-size: var(--fs-regular);
+}
+
+.home-btn {
+    cursor: pointer;
+}
+
+.home-btn span {
+    margin-left: 0.5rem;
+}
+
+.home-btn:hover span {
+    opacity: 0.8;
+    transition: opacity ease 0.3s;
+}
+
+.home-btn:hover fa-icon {
+    margin-left: -0.5rem;
+    transition: margin-left ease 0.3s;
+}
+
+.not-found-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

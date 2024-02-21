@@ -1,0 +1,141 @@
+#search-bar {
+    position: relative;
+    width: 100%;
+    min-height: 3.5rem;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#search-input {
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: none !important;
+    outline: none;
+    border-radius: 0;
+    -webkit-border-radius: 0; 
+    -webkit-appearance: none;
+    background: var(--clr-background-light);
+}
+
+#search-input::placeholder {
+    color: var(--clr-dark-gray);
+}
+
+#search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50em;
+  background: url(../../../../assets/images/clear-icon.png) no-repeat 50% 50%;
+  background-size: contain;
+  background-color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer !important;
+}
+
+#search-input:focus::-webkit-search-cancel-button {
+  opacity: 0.6;
+  pointer-events: all;
+}
+
+#search-input::-webkit-search-cancel-button:hover {
+  opacity: 1;
+}
+
+.custom-btn {
+    width: 10%;
+    padding: 0.7rem 0 0.7rem;
+    border: none;
+    font-size: var(--fs-regular);
+    color: var(--clr-text-light);
+    cursor: pointer;
+}
+
+.custom-btn:focus {
+    outline: none;
+    border: none;
+}
+
+.search-btn {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background: linear-gradient(120deg, #64008b, #dc145d, #ffa500);
+    background-size: 200% 100%;
+    background-position: 0 0;
+    animation: gradient;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: animation ease 4s;
+    color: var(--clr-background-light);
+}
+
+@keyframes gradient {
+    0% {background-position: 100% 0;}
+    50% {background-position: 0 0;}
+    100% {background-position: 100% 0;}
+}
+
+.search-btn:hover {
+    animation-play-state: paused;
+}
+
+#search-input::-webkit-search-cancel-button {
+    background-color: var(--clr-background-light);
+    color: var(--clr-background-light);
+    cursor: text;
+}
+
+.active {
+    color: var(--clr-text-light);
+    cursor: pointer;
+}
+
+.active:hover {
+    color: var(--clr-heading-dark);
+    transition: color ease 0.2s;
+}
+
+.history-btn {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #f6f6f6;
+    color: var(--clr-text-light);
+}
+
+.history-btn:focus {
+    color: var(--clr-heading-dark);
+}
+
+.history-btn:hover {
+    color: var(--clr-heading-dark);
+    transition: color ease 0.2s;
+}
+
+.mobile-msg {
+    display: none;
+    font-size: var(--fs-small);
+}
+
+.mobile-msg fa-icon {
+    color: var(--clr-accent);
+}
+@media screen and (max-width: 800px) {
+    .mobile-msg {
+        display: block;
+    }
+    #search-input {
+        font-size: 1rem;
+    }
+    .custom-btn {
+        width: 22%;
+    }
+}

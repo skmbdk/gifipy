@@ -1,0 +1,36 @@
+.notification {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #00FF99;
+    padding: 0;
+    height: 0;
+    z-index: 6;
+}
+
+.active {
+    position: fixed;
+    transition: padding ease 0.3s,
+                height ease 0.3s;
+    animation: notify;
+    animation-duration: 3s;
+}
+
+@keyframes notify {
+    0% {
+        padding: 0;
+        height: auto;
+    }
+    10%, 30%, 50%, 70%, 100% {
+        padding: 1rem;
+        height: auto;
+    }
+}
+
+.notification p {
+    color: #000;
+    font-size: var(--fs-small);
+    margin-bottom: 0;
+}
